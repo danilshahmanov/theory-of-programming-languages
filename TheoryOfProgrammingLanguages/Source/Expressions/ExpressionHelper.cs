@@ -30,9 +30,9 @@ namespace TheoryOfProgrammingLanguages.Source.Expressions
         {
             //allowed in the begin and after +, -, /, *, (, !
             return prevToken == null ||
-                prevToken.Type != TokenType.IDENTIFIER &&
+                (prevToken.Type != TokenType.IDENTIFIER &&
                 prevToken.Type != TokenType.NUMBER &&
-                prevToken.Type != TokenType.CLOSE_PARENTHESIS;
+                prevToken.Type != TokenType.CLOSE_PARENTHESIS);
         }
         public static int ParseToInt(string value) => int.Parse(value);
         public static bool IsEndOfInfixExpressionValid(Token? endToken)
